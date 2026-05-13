@@ -8,15 +8,16 @@
   <meta name="theme-color" content="#070b10" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
+  <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="Spacecombat.gg home">SPACECOMBAT.GG</a>
+      <a href="#top" class="brand" aria-label="Spacecombat.gg home">SPACECOMBAT<span class="logo-dot">.GG</span></a>
+      <div class="mode-toggle" aria-label="Content mode"><button class="mode-btn active" data-mode="basic">Basic</button><button class="mode-btn" data-mode="advanced">Advanced</button></div>
       <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">☰</button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <a href="#quick-start">Quick-start</a>
@@ -31,7 +32,7 @@
   </header>
 
   <main id="main">
-    <section class="hero section-panel">
+    <section class="hero section-panel" id="hero">
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Community-made onboarding</p>
@@ -46,9 +47,9 @@
             <a class="btn btn-primary" href="https://robertsspaceindustries.com/enlist?referral=STAR-9BBJ-ZKJV" target="_blank" rel="noopener" data-track="cta-rsi-signup">Create RSI account with code prefilled</a>
             <a class="btn btn-outline" href="#first-hours">See the 10-hour quick-start</a>
           </div>
-          <div class="ref-chip" aria-live="polite">
+          <div class="ref-chip referral-panel" aria-live="polite">
             <span>Referral code: <strong id="refCode">STAR-9BBJ-ZKJV</strong></span>
-            <button id="copyCode" class="btn btn-ghost" data-track="copy-referral-code" aria-label="Copy referral code">Copy</button>
+            <button id="copyCode" class="copy-btn copy-btn-lg" data-track="copy-referral-code" aria-label="Copy referral code">Copy</button>
             <span id="copyState" class="copy-state" role="status"></span>
           </div>
         </div>
@@ -88,7 +89,7 @@
         <div class="grid grid-3">
           <article class="card"><h3>Citizen Starter Pack</h3><p>Best for pure beginners who want low-friction access and simple progression.</p><button class="btn btn-ghost" data-track="starter-pack-click">Compare fit</button></article>
           <article class="card"><h3>Generalist Starter Pack</h3><p>Balanced choice for players planning to try contracts, hauling, and combat basics.</p><button class="btn btn-ghost" data-track="starter-pack-click">Compare fit</button></article>
-          <article class="card"><h3>Duelist Starter Pack</h3><p>For players prioritizing dogfighting reps and ship-handling confidence from day one.</p><button class="btn btn-ghost" data-track="starter-pack-click">Compare fit</button></article>
+          <article class="card" data-advanced="true"><h3>Duelist Starter Pack</h3><p>For players prioritizing dogfighting reps and ship-handling confidence from day one.</p><button class="btn btn-ghost" data-track="starter-pack-click">Compare fit</button></article>
         </div>
       </div>
     </section>

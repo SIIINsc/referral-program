@@ -16,8 +16,8 @@ if (copyBtn && refCode) {
   copyBtn.addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(refCode);
-      copyState.textContent = 'Copied';
-      setTimeout(() => { copyState.textContent = ''; }, 1600);
+      copyState.textContent = 'Copied'; copyBtn.classList.add('copied');
+      setTimeout(() => { copyState.textContent = ''; copyBtn.classList.remove('copied'); }, 1600);
     } catch {
       copyState.textContent = 'Copy failed';
     }
@@ -43,3 +43,7 @@ document.querySelectorAll('[loading="lazy"]').forEach((el) => {
   }, { threshold: 0.1 });
   observer.observe(el);
 });
+
+
+window.addEventListener('scroll',()=>document.getElementById('site-header')?.classList.toggle('scrolled',window.scrollY>8));
+document.querySelectorAll('.mode-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.body.classList.toggle('mode-advanced',btn.dataset.mode==='advanced');}));
